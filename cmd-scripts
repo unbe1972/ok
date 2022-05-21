@@ -1,0 +1,114 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local CMDX = Instance.new("TextButton")
+local HomebrewAdmin = Instance.new("TextButton")
+local InfiniteYield = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local Open = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.0171933062, 0, 0.561408758, 0)
+Frame.Size = UDim2.new(0, 199, 0, 93)
+Frame.Visible = false
+Frame.Active = true
+Frame.Draggable = true
+
+CMDX.Name = "CMD - X"
+CMDX.Parent = Frame
+CMDX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CMDX.Position = UDim2.new(0.0121681802, 0, 0.660342097, 0)
+CMDX.Size = UDim2.new(0, 199, 0, 31)
+CMDX.Style = Enum.ButtonStyle.RobloxButtonDefault
+CMDX.Font = Enum.Font.SourceSans
+CMDX.Text = "CMD - X"
+CMDX.TextColor3 = Color3.fromRGB(255, 255, 255)
+CMDX.TextSize = 14.000
+CMDX.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+HomebrewAdmin.Name = "Homebrew Admin"
+HomebrewAdmin.Parent = Frame
+HomebrewAdmin.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HomebrewAdmin.Position = UDim2.new(0.0114088804, 0, 0.320455819, 0)
+HomebrewAdmin.Size = UDim2.new(0, 200, 0, 31)
+HomebrewAdmin.Style = Enum.ButtonStyle.RobloxButtonDefault
+HomebrewAdmin.Font = Enum.Font.SourceSans
+HomebrewAdmin.Text = "Homebrew admin"
+HomebrewAdmin.TextColor3 = Color3.fromRGB(255, 255, 255)
+HomebrewAdmin.TextSize = 14.000
+HomebrewAdmin.MouseButton1Down:connect(function()
+	_G.CustomUI = false
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/mgamingpro/HomebrewAdmin/master/Main'),true))()
+end)
+
+InfiniteYield.Name = "Infinite Yield"
+InfiniteYield.Parent = Frame
+InfiniteYield.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InfiniteYield.Position = UDim2.new(0.00670903921, 0, -0.0192364007, 0)
+InfiniteYield.Size = UDim2.new(0, 200, 0, 31)
+InfiniteYield.Style = Enum.ButtonStyle.RobloxButtonDefault
+InfiniteYield.Font = Enum.Font.SourceSans
+InfiniteYield.Text = "Infinite Yield"
+InfiniteYield.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfiniteYield.TextSize = 14.000
+InfiniteYield.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+end)
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.Position = UDim2.new(0.0100502511, 0, -0.451613218, 0)
+Close.Size = UDim2.new(0, 39, 0, 25)
+Close.Style = Enum.ButtonStyle.RobloxButtonDefault
+Close.Font = Enum.Font.Oswald
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 20.000
+Close.TextWrapped = true
+
+Open.Name = "Open"
+Open.Parent = ScreenGui
+Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Open.Position = UDim2.new(0, 0, 0.967852294, 0)
+Open.Size = UDim2.new(0, 73, 0, 25)
+Open.Style = Enum.ButtonStyle.RobloxButtonDefault
+Open.Font = Enum.Font.SourceSans
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(255, 255, 255)
+Open.TextSize = 17.000
+Open.TextWrapped = true
+
+-- Scripts:
+
+local function JIUR_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end
+coroutine.wrap(JIUR_fake_script)()
+local function AOMUD_fake_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	local frame = script.Parent.Parent.Frame  -- change “Test” to the name of the frane
+	local open = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if frame.Visible == false then
+			frame.Visible = true
+		end
+	end)
+	
+end
+coroutine.wrap(AOMUD_fake_script)()
